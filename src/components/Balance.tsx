@@ -6,6 +6,9 @@ type BalanceProps = {
   balance: any
   onKeyDown: React.KeyboardEventHandler
   onChange: React.ChangeEventHandler<HTMLInputElement>
+
+  addValue: string
+  subValue: string
 }
 
 export const Balance = (props: BalanceProps) => {
@@ -23,6 +26,7 @@ export const Balance = (props: BalanceProps) => {
           placeholder='+ income'
           onKeyDown={props.onKeyDown}
           onChange={props.onChange}
+          value={props.addValue}
         />
         <Input
           id={`sub-${props.user}`}
@@ -30,6 +34,7 @@ export const Balance = (props: BalanceProps) => {
           placeholder='- expense'
           onKeyDown={props.onKeyDown}
           onChange={props.onChange}
+          value={props.subValue}
         />
       </div>
     </div>
