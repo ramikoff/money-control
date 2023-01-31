@@ -6,6 +6,8 @@ type InputProps = {
   name: string
   onKeyDown: KeyboardEventHandler<HTMLInputElement>
   onChange: ChangeEventHandler
+  value: string
+
 }
 
 export const Input = (props: InputProps) => {
@@ -20,6 +22,7 @@ export const Input = (props: InputProps) => {
         onKeyDown={props.onKeyDown}
         onChange={props.onChange}
         placeholder={props.placeholder}
+        value={props.value}
       />
     </div>
   )
