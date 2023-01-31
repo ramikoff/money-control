@@ -8,7 +8,6 @@ function App() {
   const [alexBalance, setAlexBalance] = useState(0)
   const [yuliaBalance, setYuliaBalance] = useState(0)
 
-
   const [value, setValue] = useState({
     'add-Alexander': '',
     'sub-Alexander': '',
@@ -16,10 +15,16 @@ function App() {
     'sub-Yulia': ''
   })
 
+  const isInputValid = (inputValue: string) => {
+    const reg = /^\d+$/
+    return reg.test(inputValue)
+  }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((prev) => {
-      return { ...prev, [e.target.name]: e.target.value }
-    })
+    if (isInputValid(e.target.value))
+      setValue((prev) => {
+        return { ...prev, [e.target.name]: e.target.value }
+      })
   }
 
   const calcResult = (id: string) => {
@@ -46,19 +51,20 @@ function App() {
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter')
       calcResult(e.currentTarget.id)
-    }
   }
 
   return (
     <div className='App'>
       <Header />
       <div className='wrapper flex flex-wrap justify-around'>
-        <Balance user='Alexander' onChange={handleChange} onKeyDown={handleKeyDown} balance={alexBalance} addValue={value['add-Alexander']}
+        <Balance user='Alexander' onChange={handleChange} onKeyDown={handleKeyDown} balance={alexBalance}
+                 addValue={value['add-Alexander']}
                  subValue={value['sub-Alexander']}
         />
-        <Balance user='Yulia' onChange={handleChange} onKeyDown={handleKeyDown} balance={yuliaBalance} addValue={value['add-Yulia']}
+        <Balance user='Yulia' onChange={handleChange} onKeyDown={handleKeyDown} balance={yuliaBalance}
+                 addValue={value['add-Yulia']}
                  subValue={value['sub-Yulia']}
         />
       </div>
