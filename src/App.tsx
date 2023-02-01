@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import useLocalStorage from './hooks/useLocalStorage'
 import './App.css'
 
 import { Header } from './components/Header'
 import { Balance } from './components/Balance'
 
 function App() {
-  const [alexBalance, setAlexBalance] = useState(0)
-  const [yuliaBalance, setYuliaBalance] = useState(0)
+  const [alexBalance, setAlexBalance] = useLocalStorage('alexBalance', 0)
+  const [yuliaBalance, setYuliaBalance] = useLocalStorage('yuliaBalance', 0)
 
   const [value, setValue] = useState({
     'add-Alexander': '',
