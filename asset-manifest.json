@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/money-control/static/css/main.e38a3611.css",
+    "main.js": "/money-control/static/js/main.7d6c5e52.js",
+    "index.html": "/money-control/index.html",
+    "main.e38a3611.css.map": "/money-control/static/css/main.e38a3611.css.map",
+    "main.7d6c5e52.js.map": "/money-control/static/js/main.7d6c5e52.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e38a3611.css",
+    "static/js/main.7d6c5e52.js"
+  ]
+}
